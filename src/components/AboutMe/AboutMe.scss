@@ -1,0 +1,14 @@
+@use '/src/styles/variables.module' as v;
+
+.flex {
+  display: flex;
+  align-items: center;
+
+  border: 3px solid v.$secondary-color;
+  border-radius: 30px;
+
+  min-width: 425px;
+  max-width: max-content;
+  margin: 0 auto 50px auto;
+  padding: 15px;
+}
