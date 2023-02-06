@@ -52,7 +52,7 @@ export function AboutMe() {
       <div className="flex">
         <Avatar
           alt="Profile Pic"
-          src="src/assets/avatar.jpg"
+          src='/assets/img/avatar.jpg'
           sx={{ width: iconSize, height: iconSize }}
         />
         <Divider orientation="vertical" variant="middle" flexItem sx={{ borderWidth: '1px', borderColor: 'white', marginLeft: '15px'}}/>
