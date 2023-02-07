@@ -1,4 +1,5 @@
-$main-bg-color: #202020;
+$main-bg-color: #181a1b;
+$secondary-bg-color: #3d4245;
 $main-color: #f9f9f9;
 $secondary-color: rgba(232, 230, 227, 0.6);
 $btn-border-color: rgba(20, 93, 165, 0.5);
@@ -6,6 +7,7 @@ $btn-text-color: rgb(83, 167, 235);
 
 :export {
   secondaryColor: $secondary-color;
+  secondaryBgColor: $secondary-bg-color;
   buttonBorderColor: $btn-border-color;
   buttonTextColor: $btn-text-color;
   mainBgColor: $main-bg-color;

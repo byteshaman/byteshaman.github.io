@@ -1,5 +1,5 @@
-import { ProjectInfo } from '../../../models/interfaces';
-import { CheckItOutButton } from '../../CheckItOutButton/CheckItOutButton';
+import { ProjectInfo } from '../../../../models/interfaces';
+import { CheckItOutButton } from '../../../CheckItOutButton/CheckItOutButton';
  
 export function CarouselItem(props: {item: ProjectInfo}) {
   return (

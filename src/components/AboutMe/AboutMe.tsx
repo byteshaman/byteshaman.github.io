@@ -7,7 +7,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import { ListItem as LI } from '../../models/interfaces';
 import v from '../../styles/_variables.module.scss';
-import './AboutMe.scss'
+import avatar from '/src/assets/img/avatar.jpg';
+import './AboutMe.scss';
 
 export function AboutMe() {
   const listItems: LI[] = [
@@ -52,10 +53,10 @@ export function AboutMe() {
       <div className="flex">
         <Avatar
           alt="Profile Pic"
-          src='/assets/img/avatar.jpg'
+          src={avatar}
           sx={{ width: iconSize, height: iconSize }}
         />
-        <Divider orientation="vertical" variant="middle" flexItem sx={{ borderWidth: '1px', borderColor: 'white', marginLeft: '15px'}}/>
+        <Divider orientation="vertical" variant="middle" flexItem sx={{ borderWidth: '1px', borderColor: v.secondaryColor, marginLeft: '15px'}}/>
         <List dense={true}>
           {listItems.map((item, i) => {
             const Icon = item.icon;

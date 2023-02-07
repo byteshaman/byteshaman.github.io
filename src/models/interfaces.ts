@@ -7,6 +7,12 @@ export interface ProjectInfo {
   url: string;
 }
 
+export interface FooterTechnology {
+  icon: any;
+  name: string;
+  url: string;
+}
+
 export interface ListItem {
   description: string;
   value: string;

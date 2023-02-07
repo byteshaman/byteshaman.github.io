@@ -40,11 +40,10 @@ $duration: 0.1s;
 }
 
 .left-card {
-  float: left;
   @include magic-border($border-width, $border-color, $duration, 1);
 }
 
 .right-card {
-  float: right;
+  margin-left: auto;
   @include magic-border($border-width, $border-color, $duration, 0);
 }

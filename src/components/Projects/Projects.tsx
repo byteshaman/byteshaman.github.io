@@ -2,7 +2,7 @@ import useMediaQuery from '@mui/material/useMediaQuery/useMediaQuery';
 import { ProjectInfo } from '../../models/interfaces';
 
 import { ProjectsCardList } from './ProjectsCardList/ProjectsCardList';
-import { ProjectsCarousel } from '../ProjectsCarousel/ProjectsCarousel';
+import { ProjectsCarousel } from './ProjectsCarousel/ProjectsCarousel';
 
 import './Projects.scss';
 

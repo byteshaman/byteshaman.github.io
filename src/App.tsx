@@ -1,12 +1,14 @@
 import './App.scss'
 import { AboutMe } from './components/AboutMe/AboutMe'
+import { Footer } from './components/Footer/Footer'
 import { Projects } from './components/Projects/Projects'
 
 export default function App() {
   return (
     <>
-      <AboutMe></AboutMe>
-      <Projects></Projects>
+      <AboutMe/>
+      <Projects/>
+      <Footer/>
     </>
   )
 }
