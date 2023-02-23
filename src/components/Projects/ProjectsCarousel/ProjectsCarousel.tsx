@@ -17,7 +17,7 @@ export function ProjectsCarousel() {
         marginTop: '-30px', // move bottom indicators further up
       }
     },
-    sx: { textAlign: 'center', width: '650px', margin: '0 auto' }
+    sx: { textAlign: 'center', maxWidth: '650px', margin: '0 auto' }
   }
 
   

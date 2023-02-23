@@ -9,11 +9,12 @@ import { projects } from '../../../models/projects';
 
 
 import v from '../../../styles/_variables.module.scss';
+import './ProjectsCardList.scss';
 
 export function ProjectsCardList(): JSX.Element {
   const sxCard = {
     marginBottom: '15px',
-    maxWidth: 345,
+    maxWidth: 245,
     color: v.mainColor,
     backgroundColor: v.mainBgColor
   }

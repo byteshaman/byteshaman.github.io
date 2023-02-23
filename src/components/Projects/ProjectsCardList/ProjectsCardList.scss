@@ -47,3 +47,9 @@ $duration: 0.1s;
   margin-left: auto;
   @include magic-border($border-width, $border-color, $duration, 0);
 }
+
+@media (max-width: v.$breakpoint-420) {
+  .left-card, .right-card {
+    max-width: 60%;
+  }
+}

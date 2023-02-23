@@ -15,17 +15,17 @@ import Tooltip from "@mui/material/Tooltip/Tooltip";
 export function Footer() {
   const technologies: FooterTechnology[] = [
     { 
-      name: 'React',
+      name: 'React 18.2.0',
       url: 'https://reactjs.org/',
       icon: react
     },
     { 
-      name: 'MUI',
+      name: 'MUI 5.11.6',
       url: 'https://mui.com/material-ui/getting-started/overview/',
       icon: mui
     },
     { 
-      name: 'Vite',
+      name: 'Vite 4.0.0',
       url: 'https://vitejs.dev/',
       icon: vite
     },
@@ -36,7 +36,7 @@ export function Footer() {
     },
   ]
 
-  const iconSize = 56;
+  const iconSize = 'clamp(36px, 5.5vw, 56px)';
 
 
   const openInNewTab = (url: string) => {

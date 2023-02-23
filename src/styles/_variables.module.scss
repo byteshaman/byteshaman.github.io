@@ -4,6 +4,8 @@ $main-color: #f9f9f9;
 $secondary-color: rgba(232, 230, 227, 0.6);
 $btn-border-color: rgba(20, 93, 165, 0.5);
 $btn-text-color: rgb(83, 167, 235);
+$breakpoint-720: 720px;
+$breakpoint-420: 420px;
 
 :export {
   secondaryColor: $secondary-color;
@@ -12,4 +14,6 @@ $btn-text-color: rgb(83, 167, 235);
   buttonTextColor: $btn-text-color;
   mainBgColor: $main-bg-color;
   mainColor: $main-color;
+  breakpoint420: $breakpoint-420;
+  breakpoint720: $breakpoint-720;
 }

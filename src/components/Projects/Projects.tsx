@@ -1,13 +1,12 @@
 import useMediaQuery from '@mui/material/useMediaQuery/useMediaQuery';
-import { ProjectInfo } from '../../models/interfaces';
 
 import { ProjectsCardList } from './ProjectsCardList/ProjectsCardList';
 import { ProjectsCarousel } from './ProjectsCarousel/ProjectsCarousel';
+import v from '../../styles/_variables.module.scss';
 
-import './Projects.scss';
 
 export function Projects() {
-  const matches = useMediaQuery('(min-width:700px)');
+  const matches = useMediaQuery(`(min-width:${v.breakpoint720})`);
   let componentToShow;
 
   // Desktop: carousel
