@@ -7,11 +7,11 @@
 html {
   //font
   font-family: Solitreo, cursive;
-  font-size: 16px;
+  font-size: 18px;
   background-color: v.$main-bg-color;
   line-height: 24px;
   font-weight: 400;
-  padding: 2rem;
+  padding: v.$padding-y 10px;
 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,10 +23,12 @@ body {
   margin: 0;
   color: v.$main-color;
   text-align: center;
-}
 
-footer {
-  margin-top: 50px;
+  #root {
+    height: calc(100vh - 2*v.$padding-y);
+    display: flex; //allow footer to be on bottom
+    flex-direction: column;
+  }
 }
 
 h1 {

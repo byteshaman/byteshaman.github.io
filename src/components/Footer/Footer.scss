@@ -1,13 +1,37 @@
+@use '/src/styles/variables.module' as v;
 
+$icon-size: 56px;
+
+footer {
+  margin-top: auto; // force footer at bottom
+}
 
 .footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  padding: 0 5rem;
 
-  div.MuiAvatar-root {
-    cursor: pointer;
+  div {
+    &.MuiAvatar-root {
+      cursor: pointer;
+    }
+
+    &.icon {
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+}
+
+@media (max-width: v.$breakpoint-420) {
+  $icon-size: 46px;
+  .footer {
+    gap: 5px;
+
+    div.icon {
+      width: $icon-size;
+      height: $icon-size;
+    }
   }
 }

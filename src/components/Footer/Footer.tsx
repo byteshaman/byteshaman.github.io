@@ -36,8 +36,6 @@ export function Footer() {
     },
   ]
 
-  const iconSize = 'clamp(36px, 5.5vw, 56px)';
-
 
   const openInNewTab = (url: string) => {
     window.open(url, '_blank', 'noreferrer');
@@ -51,9 +49,10 @@ export function Footer() {
           <Tooltip title={tech.name} placement="top">
             <Avatar
               key={i}
+              className="icon"
               alt={tech.name}
               src={tech.icon  }
-              sx={{ width: iconSize, height: iconSize, backgroundColor: v.mainBgColor }}
+              sx={{ backgroundColor: v.mainBgColor }}
               onClick={() => openInNewTab(tech.url)}
             />
           </Tooltip>

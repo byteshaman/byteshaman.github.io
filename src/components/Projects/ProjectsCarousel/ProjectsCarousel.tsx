@@ -14,10 +14,10 @@ export function ProjectsCarousel() {
     navButtonsAlwaysVisible: true,
     indicatorContainerProps: {
       style: {
-        marginTop: '-30px', // move bottom indicators further up
+        marginTop: '-30px', // move bottom indicators up
       }
     },
-    sx: { textAlign: 'center', maxWidth: '650px', margin: '0 auto' }
+    sx: { textAlign: 'center', width: '700px', margin: '0 auto' }
   }
 
   

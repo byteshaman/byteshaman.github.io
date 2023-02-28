@@ -11,5 +11,10 @@ export const projects: ProjectInfo[] =
       name: 'Music Map',
       description: "An interactive map\\table for my '1 country - 1 music album' project",
       url: '/music-map'
+    },
+    {
+      name: 'Code Snippets',
+      description: "Useful code snippets for a variety of languages",
+      url: '/code-snippets'
     }
   ];
