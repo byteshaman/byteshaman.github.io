@@ -1,13 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects Showcase</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="ByteShaman">
+  <meta name="description" content="Projects showcase page">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Solitreo&display=swap" rel="stylesheet">
+
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Projects Showcase</title>
+
+  <script defer src="./scripts/main.js"></script>
+  <script defer src="./scripts/canvas.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- NAVBAR -->
+    <nav>
+      <a href="http://github.com/byteshaman" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        <span>Github</span>
+      </a>
+    </nav>
+    <div class="theme-switcher">
+      <button class="theme-switcher__button mobile-visible" data-theme="light">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button class="theme-switcher__button" data-theme="light dark">
+        <i class="fas fa-circle-half-stroke"></i>
+      </button>
+      <button class="theme-switcher__button" data-theme="dark">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+
+  <main>
+    <!-- SECTION 1: Profile -->
+    <section class="hero-section">
+      <div>
+        <h2 class="typewriter">Hello, world! 👋</h2>
+        <p>Web Developer from Italy, passionate about IT since I was 1010<sub>2</sub></p>
+
+        <p>My motto is: «I live my life one byte at a time»</p>
+
+        <p>Between bug fixes, I dive into music, films, and legendary gaming quests!</p>
+
+        <div class="links">
+          <a href="#skills">
+            <i class="fas fa-code"></i>
+            <span>Skills</span>
+          </a>
+
+          <a href="#projects">
+            <i class="fas fa-pencil"></i>
+            <span>Projects</span>
+          </a>
+        </div>
+      </div>
+
+      <figure id="pfp-container">
+        <canvas id="pfp"></canvas>
+        <figcaption><small>Scratch to reveal</small></figcaption>
+      </figure>
+    </section>
+
+    <!-- SECTION 2: Skills -->
+    <section class="skills-section">
+      <h2 id="skills">SKILLS</h2>
+      <p class="align-center">
+        Behind every project there is a toolkit of skills — here's mine:
+      </p>
+
+      <div class="skills-list">
+        <div class="cell">
+          <img src="images/logos/angular-logo.svg" alt="angular logo">
+          <span>Angular</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/logos/css-logo.svg" alt="css logo">
+          <span>CSS</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/logos/git-logo.svg" alt="git logo">
+          <span>Git</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/logos/html-logo.svg" alt="html logo">
+          <span>HTML</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/logos/javascript-logo.svg" alt="javascript logo">
+          <span>JavaScript</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/logos/sass-logo.svg" alt="sass logo">
+          <span>SASS</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/logos/sql-logo.svg" alt="sql logo">
+          <span>SQL</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/logos/typescript-logo.svg" alt="typescript logo">
+          <span>TypeScript</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Projects -->
+    <section class="projects-section">
+      <h2 id="projects">PROJECTS</h2>
+      <p class="align-center">
+        Ideas transformed into bytes...
+      </p>
+
+        <div class="card-container">
+          <!-- Music Map -->
+          <div class="card">
+            <div class="card__inner music-map">
+              <div class="card__content">
+                <div class="card__title align-center">
+                  Music Map
+                </div>
+        
+                <div class="card__description">
+                  '1 country - 1 music album' interactive map
+                </div>
+        
+                <a href='/music-map' target="_blank" class="card__button">
+                  <i class="fa-solid fa-up-right-from-square mr-5"></i>
+                  Check it out
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Useful Stuff -->
+          <div class="card">
+            <div class="card__inner useful-stuff">
+              <div class="card__content">
+                <div class="card__title align-center">
+                  Useful Stuff
+                </div>
+          
+                <div class="card__description">
+                  A collection of useful websites and software
+                </div>
+          
+                <a href='/useful-stuff' target="_blank" class="card__button">
+                  <i class="fa-solid fa-up-right-from-square mr-5"></i>
+                  Check it out
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Albums Showcase -->
+          <div class="card">
+            <div class="card__inner favorite-albums">
+              <div class="card__content">
+                <div class="card__title align-center">
+                  Albums Showcase
+                </div>
+          
+                <div class="card__description">
+                  A showcase of my favorite music albums
+                </div>
+          
+                <a href='/favorite-albums-showcase' target="_blank" class="card__button">
+                  <i class="fa-solid fa-up-right-from-square mr-5"></i>
+                  Check it out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+  </main>
+</body>
+
 </html>

@@ -1,0 +1,453 @@
+//#region SCSS
+/// Colors
+$colors: (
+  light: (
+    text: #181a1b,
+    link: #181a1b,
+    bg: #fafafa,
+    btn-border: #3d4245,
+    theme-btn-bg: #cacccd
+  ),
+  dark: (
+    text: #eae8e5,
+    link: #87b6ed,
+    bg: #181a1b,
+    btn-border: #383c3e,
+    theme-btn-bg: #4f5659
+  )
+);
+
+// Returns the value of a specified property for a given theme.
+@function getThemeVar($theme, $property) {
+  @return map-get(map-get($colors, $theme), $property);
+}
+
+/// Font sizes
+$font-sizes: (
+  fs--2: clamp(0.6076rem, 0.5755rem + 0.1605vw, 0.72rem),
+  fs--1: clamp(0.7292rem, 0.6804rem + 0.244vw, 0.9rem),
+  fs-0: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem),
+  fs-1: clamp(1.05rem, 0.9482rem + 0.5089vw, 1.4063rem),
+  fs-2: clamp(1.26rem, 1.1178rem + 0.7112vw, 1.7578rem),
+  fs-3: clamp(1.512rem, 1.3162rem + 0.979vw, 2.1973rem),
+  fs-4: clamp(1.8144rem, 1.5481rem + 1.3317vw, 2.7466rem),
+  fs-5: clamp(2.1773rem, 1.8184rem + 1.7942vw, 3.4332rem)
+);
+
+@function fs($size) {
+  @return map-get($font-sizes, $size);
+}
+
+/// Breakpoints
+$breakpoints: (
+  mobile: 600px,
+  tablet: 900px,
+  desktop: 1200px
+);
+
+@mixin from-breakpoint-up($breakpoint) {
+  @media (width >= map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin below-breakpoint($breakpoint) {
+  @media (width < map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+//# Utility mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Variables
+$text-color: light-dark(getThemeVar(light, text), getThemeVar(dark, text));
+$link-color: light-dark(getThemeVar(light, link), getThemeVar(dark, link));
+$bg-color: light-dark(getThemeVar(light, bg), getThemeVar(dark, bg));
+$btn-border-color: light-dark(getThemeVar(light, btn-border), getThemeVar(dark, btn-border));
+$theme-btn-bg-color: light-dark(getThemeVar(light, theme-btn-bg), getThemeVar(dark, theme-btn-bg));
+$theme-btn-size: 40px;
+$canvas-size: 200px;
+$project-card-size: 275px;
+
+
+//#endregion
+
+// Root styles
+:root {
+  color-scheme: light dark;
+}
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Base styles
+html {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.theme-switcher__button {
+  cursor: pointer;
+  width: $theme-btn-size;
+  height: $theme-btn-size;
+  background-color: $bg-color;
+
+  &.selected {
+    cursor: pointer;
+    background: $theme-btn-bg-color;
+  }
+
+  &:not(.selected) { // Hide other buttons
+    display: none;
+  }
+
+  @include from-breakpoint-up(mobile) {
+    &.selected {
+      cursor: default;
+    }
+
+    &:not(.selected) { 
+      display: inline-block;
+    }
+  }
+
+  i {
+    pointer-events: none; // Ignore event on icon so it can be intercepted
+  }
+}
+
+body {
+  width: 90vw;
+  max-width: map-get($breakpoints, desktop);
+  min-width: 300px;
+  margin: 10px auto 0 auto;
+}
+
+main {
+  display: flow-root;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+section {
+  margin: 25px auto;
+}
+
+//#region Utility
+.align-center {
+  text-align: center;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+//#endregion Utility
+
+
+//#region Typography
+html {
+  font-size: fs(fs-0);
+}
+
+h2 {
+  font-size: fs(fs-5);
+  font-family: 'Solitreo';
+  line-height: 1.5;
+
+  &:not(.typewriter) {
+    text-align: center;
+    letter-spacing: 0.25em;
+
+    @include from-breakpoint-up(mobile) {
+      letter-spacing: 0.5em;
+    }
+  }
+}
+
+sub {
+  font-size: fs(fs--2);
+}
+//#endregion
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+button {
+  border: 1px solid $btn-border-color;
+  border-radius: 5px;
+}
+
+// Profile pic
+canvas {
+  background-image: url("./images/profile-pic.webp");
+  background-size: cover;
+  cursor: url("./images/coin.webp") 15 15, crosshair;
+  border-radius: 50%;
+
+  max-width: 100%;
+  width: $canvas-size;
+  
+  // increase sizes
+  @include from-breakpoint-up(mobile) {
+    width: $canvas-size + 75px;
+  }
+  
+  @include from-breakpoint-up(tablet) {
+    width: $canvas-size + 150px;
+  }
+}
+
+figcaption {
+  text-align: center;
+  // display: none;
+
+  small {
+    font-size: fs(fs--1);
+  }
+}
+
+// @media (pointer: coarse) {
+//   figcaption {
+//     display: block;
+//   }
+// }
+
+
+// Hero section
+.hero-section {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  .links {
+    margin-top: 25px;
+
+    a {
+      display: inline-block;
+      padding: 5px 10px;
+      color: $link-color;
+      border: 2px solid $btn-border-color;
+      border-radius: 5px;
+      transition: 0.1s;
+
+      ~a {
+        margin-left: 10px;
+      }
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+
+  @include from-breakpoint-up(tablet) {
+    flex-direction: row;
+  }
+}
+
+
+
+//#region Typewriter
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid $text-color;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  max-width: max-content;
+  animation:
+    typing 2s steps(45, end),
+    blink-caret 1s step-end infinite;
+
+  @include from-breakpoint-up(mobile) {
+    letter-spacing: 0.15em;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $text-color;
+  }
+}
+//#endregion
+
+// Skills
+.skills-section {
+  max-width: 1000px; // Max 4 skills per row
+
+  .skills-list {
+    @include flex-center;
+    flex-wrap: wrap;
+
+    .cell {
+      @include flex-center;
+      gap: 10px;
+      width: 200px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: 1.5px solid $btn-border-color;
+      border-radius: 5px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+// Projects
+.projects-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 3px;
+  perspective: 1000px;
+  color: getThemeVar(dark, text); // Force color since it's always on a dark bg 
+}
+
+.card__inner {
+  width: $project-card-size;
+  height: $project-card-size;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+  @include from-breakpoint-up(mobile) {
+    width: $canvas-size + 75px;
+    height: $canvas-size + 75px;
+  }
+
+  @include from-breakpoint-up(tablet) {
+    width: $canvas-size + 175px;
+    height: $canvas-size + 175px;
+  }
+}
+
+.music-map {
+  background-image: url('./images/projects/music-map.webp');
+}
+
+.useful-stuff {
+  background-image: url('./images/projects/useful-stuff.webp');
+}
+
+.favorite-albums {
+  background-image: url('./images/projects/favorite-albums.webp');
+}
+
+.card:hover .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card__title {
+  font-size: fs(fs-3);
+}
+
+.card__description {
+  font-size: fs(fs-0);
+  text-align: center;
+}
+
+.card__button {
+  border-radius: 5px;
+  border: 1px solid rgba(218,165,32, 1);;
+  padding: 10px 25px;
+  width: max-content;
+  margin: 0 auto;
+  background-color: transparent;
+  cursor: pointer;
+  animation: pulse-glow-effect 5s infinite;
+  color: getThemeVar(dark, text); // Force color since it's always on a dark bg 
+}
+
+// Prevent click on button on mobile to open link before card is flipped
+@media (hover: none) {
+  .card__button {
+    visibility: hidden;
+    transition-delay: 0.5s;
+  }
+  
+  .card:hover .card__button {
+    visibility: visible;
+    transition-delay: 0.01s;
+  }
+}
+
+.card:hover .card__content {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.card:not(:hover) .card__content {
+  transition-delay: 0s;
+}

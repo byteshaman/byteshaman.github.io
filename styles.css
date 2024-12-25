@@ -1,0 +1,336 @@
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  background-color: light-dark(#fafafa, #181a1b);
+  color: light-dark(#181a1b, #eae8e5);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.theme-switcher__button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: light-dark(#fafafa, #181a1b);
+}
+.theme-switcher__button.selected {
+  cursor: pointer;
+  background: light-dark(#cacccd, #4f5659);
+}
+.theme-switcher__button:not(.selected) {
+  display: none;
+}
+@media (width >= 600px) {
+  .theme-switcher__button.selected {
+    cursor: default;
+  }
+  .theme-switcher__button:not(.selected) {
+    display: inline-block;
+  }
+}
+.theme-switcher__button i {
+  pointer-events: none;
+}
+
+body {
+  width: 90vw;
+  max-width: 1200px;
+  min-width: 300px;
+  margin: 10px auto 0 auto;
+}
+
+main {
+  display: flow-root;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+section {
+  margin: 25px auto;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+html {
+  font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
+}
+
+h2 {
+  font-size: clamp(2.1773rem, 1.8184rem + 1.7942vw, 3.4332rem);
+  font-family: "Solitreo";
+  line-height: 1.5;
+}
+h2:not(.typewriter) {
+  text-align: center;
+  letter-spacing: 0.25em;
+}
+@media (width >= 600px) {
+  h2:not(.typewriter) {
+    letter-spacing: 0.5em;
+  }
+}
+
+sub {
+  font-size: clamp(0.6076rem, 0.5755rem + 0.1605vw, 0.72rem);
+}
+
+a {
+  color: light-dark(#181a1b, #eae8e5);
+  text-decoration: none;
+}
+
+button {
+  border: 1px solid light-dark(#3d4245, #383c3e);
+  border-radius: 5px;
+}
+
+canvas {
+  background-image: url("./images/profile-pic.webp");
+  background-size: cover;
+  cursor: url("./images/coin.webp") 15 15, crosshair;
+  border-radius: 50%;
+  max-width: 100%;
+  width: 200px;
+}
+@media (width >= 600px) {
+  canvas {
+    width: 275px;
+  }
+}
+@media (width >= 900px) {
+  canvas {
+    width: 350px;
+  }
+}
+
+figcaption {
+  text-align: center;
+}
+figcaption small {
+  font-size: clamp(0.7292rem, 0.6804rem + 0.244vw, 0.9rem);
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.hero-section .links {
+  margin-top: 25px;
+}
+.hero-section .links a {
+  display: inline-block;
+  padding: 5px 10px;
+  color: light-dark(#181a1b, #87b6ed);
+  border: 2px solid light-dark(#3d4245, #383c3e);
+  border-radius: 5px;
+  transition: 0.1s;
+}
+.hero-section .links a ~ a {
+  margin-left: 10px;
+}
+.hero-section .links a:hover {
+  color: light-dark(#181a1b, #87b6ed);
+}
+@media (width >= 900px) {
+  .hero-section {
+    flex-direction: row;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid light-dark(#181a1b, #eae8e5);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  animation: typing 2s steps(45, end), blink-caret 1s step-end infinite;
+}
+@media (width >= 600px) {
+  .typewriter {
+    letter-spacing: 0.15em;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: light-dark(#181a1b, #eae8e5);
+  }
+}
+.skills-section {
+  max-width: 1000px;
+}
+.skills-section .skills-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skills-section .skills-list .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 1.5px solid light-dark(#3d4245, #383c3e);
+  border-radius: 5px;
+}
+.skills-section .skills-list .cell img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 2px;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 3px;
+  perspective: 1000px;
+  color: #eae8e5;
+}
+
+.card__inner {
+  width: 275px;
+  height: 275px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+@media (width >= 600px) {
+  .card__inner {
+    width: 275px;
+    height: 275px;
+  }
+}
+@media (width >= 900px) {
+  .card__inner {
+    width: 375px;
+    height: 375px;
+  }
+}
+
+.music-map {
+  background-image: url("./images/projects/music-map.webp");
+}
+
+.useful-stuff {
+  background-image: url("./images/projects/useful-stuff.webp");
+}
+
+.favorite-albums {
+  background-image: url("./images/projects/favorite-albums.webp");
+}
+
+.card:hover .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card__title {
+  font-size: clamp(1.512rem, 1.3162rem + 0.979vw, 2.1973rem);
+}
+
+.card__description {
+  font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
+  text-align: center;
+}
+
+.card__button {
+  border-radius: 5px;
+  border: 1px solid rgb(218, 165, 32);
+  padding: 10px 25px;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  background-color: transparent;
+  cursor: pointer;
+  animation: pulse-glow-effect 5s infinite;
+  color: #eae8e5;
+}
+
+@media (hover: none) {
+  .card__button {
+    visibility: hidden;
+    transition-delay: 0.5s;
+  }
+  .card:hover .card__button {
+    visibility: visible;
+    transition-delay: 0.01s;
+  }
+}
+.card:hover .card__content {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.card:not(:hover) .card__content {
+  transition-delay: 0s;
+}
