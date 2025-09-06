@@ -72,7 +72,7 @@ $btn-border-color: light-dark(getThemeVar(light, btn-border), getThemeVar(dark, 
 $theme-btn-bg-color: light-dark(getThemeVar(light, theme-btn-bg), getThemeVar(dark, theme-btn-bg));
 $theme-btn-size: 40px;
 $canvas-size: 200px;
-$project-card-size: 275px;
+$project-card-size: 250px;
 
 
 //#endregion
@@ -334,12 +334,6 @@ figcaption {
 }
 
 // Projects
-.projects-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 20px;
-}
 
 .card-container {
   margin-top: 40px;
@@ -370,14 +364,14 @@ figcaption {
   transform-style: preserve-3d;
 
   @include from-breakpoint-up(mobile) {
-    width: $canvas-size + 75px;
-    height: $canvas-size + 75px;
+    width: $canvas-size + 50px;
+    height: $canvas-size + 50px;
   }
 
   @include from-breakpoint-up(tablet) {
-    width: $canvas-size + 175px;
-    height: $canvas-size + 175px;
-  }
+    width: $canvas-size + 100px;
+    height: $canvas-size + 100px;
+  } 
 }
 
 .music-map {
@@ -390,6 +384,10 @@ figcaption {
 
 .favorite-albums {
   background-image: url('./images/projects/favorite-albums.webp');
+}
+
+.my-tv-list {
+  background-image: url('./images/projects/my-tv-list.webp');
 }
 
 .card:hover .card__inner {
