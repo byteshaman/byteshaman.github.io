@@ -336,11 +336,13 @@ figcaption {
 // Projects
 
 .card-container {
-  margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .card {
