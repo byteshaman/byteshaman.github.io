@@ -1,226 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteShaman</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="author" content="ByteShaman">
-  <meta name="description" content="Projects showcase page">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/global.css" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Solitreo&display=swap" rel="stylesheet">
-
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <title>Projects Showcase</title>
-
-  <script defer src="./scripts/main.js"></script>
-  <script defer src="./scripts/canvas.js"></script>
-</head>
-
-<body>
-  <header>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      const season = localStorage.getItem('theme-season');
+      const mode = localStorage.getItem('theme-mode');
+      if (season) document.documentElement.setAttribute('data-theme', season);
+      if (mode) document.documentElement.style.colorScheme = mode;
+    </script>
+  </head>
+  
+  <body>
     <!-- NAVBAR -->
-    <nav>
-      <a href="http://github.com/byteshaman" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i>
-        <span>Github</span>
-      </a>
-    </nav>
-    <div class="theme-switcher">
-      <button class="theme-switcher__button mobile-visible" data-theme="light">
-        <i class="fas fa-sun"></i>
-      </button>
-      <button class="theme-switcher__button" data-theme="light dark">
-        <i class="fas fa-circle-half-stroke"></i>
-      </button>
-      <button class="theme-switcher__button" data-theme="dark">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
-  </header>
+    <header>
+      <nav>
+        <a href="http://github.com/byteshaman" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+          <span>Github</span>
+        </a>
+      </nav>
+      <theme-switcher></theme-switcher>
+    </header>
 
+    <main>
+      <!-- SECTION 1: Profile -->
+      <section class="profile">
+        <div>
+          <typed-text text="Hello, world! 👋"></typed-text>
 
-  <main>
-    <!-- SECTION 1: Profile -->
-    <section class="hero-section">
-      <div>
-        <h2 class="typewriter">Hello, world! 👋</h2>
-        <p>Web Developer from Italy, passionate about IT since I was 1010<sub>2</sub></p>
-
-        <p>My motto is: «I live my life one byte at a time»</p>
-
-        <p>Between bug fixes, I dive into music, films, and legendary gaming quests!</p>
-
-        <div class="links">
-          <a href="#skills">
-            <i class="fas fa-code"></i>
-            <span>Skills</span>
-          </a>
-
-          <a href="#projects">
-            <i class="fas fa-pencil"></i>
-            <span>Projects</span>
-          </a>
+          <p>Web Developer from Italy, passionate about IT since I was 1010<sub>2</sub></p>
+      
+          <p>My motto is: «I live my life one byte at a time»</p>
+      
+          <p>Between bug fixes, I dive into music, films, and legendary gaming quests!</p>
         </div>
-      </div>
-
-      <figure id="pfp-container">
-        <canvas id="pfp"></canvas>
-        <figcaption><small>Scratch to reveal</small></figcaption>
-      </figure>
-    </section>
-
-    <!-- SECTION 2: Skills -->
-    <section class="skills-section">
-      <h2 id="skills">SKILLS</h2>
-      <p class="align-center">
-        Behind every project there is a toolkit of skills — here's mine:
-      </p>
-
-      <div class="skills-list">
-        <div class="cell">
-          <img src="images/logos/angular-logo.svg" alt="angular logo">
-          <span>Angular</span>
+      
+        <div class="pfp-wrap">
+          <img src="./src/assets/placeholder.svg" alt="Profile picture" class="placeholder" width="100"/>
+          <img src="./src/assets/profile-pic.webp" alt="pfp" aria-hidden="true" loading="lazy" class="pfp"  width="100"/>
         </div>
+      </section>
 
-        <div class="cell">
-          <img src="images/logos/css-logo.svg" alt="css logo">
-          <span>CSS</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/logos/git-logo.svg" alt="git logo">
-          <span>Git</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/logos/html-logo.svg" alt="html logo">
-          <span>HTML</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/logos/javascript-logo.svg" alt="javascript logo">
-          <span>JavaScript</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/logos/sass-logo.svg" alt="sass logo">
-          <span>SASS</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/logos/sql-logo.svg" alt="sql logo">
-          <span>SQL</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/logos/typescript-logo.svg" alt="typescript logo">
-          <span>TypeScript</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: Projects -->
-    <section class="projects-section">
-      <h2 id="projects">PROJECTS</h2>
-      <p class="align-center">
-        Ideas transformed into bytes...
-      </p>
-
-        <div class="card-container">
-          <!-- Albums Showcase -->
-          <div class="card">
-            <div class="card__inner favorite-albums">
-              <div class="card__content">
-                <div class="card__title align-center">
-                  Albums Showcase
-                </div>
-          
-                <div class="card__description">
-                  Showcase of my favorite music albums
-                </div>
-          
-                <a href='/favorite-albums-showcase' target="_blank" class="card__button">
-                  <i class="fa-solid fa-up-right-from-square mr-5"></i>
-                  Check it out
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Music Map -->
-          <div class="card">
-            <div class="card__inner music-map">
-              <div class="card__content">
-                <div class="card__title align-center">
-                  Music Map
-                </div>
-        
-                <div class="card__description">
-                  '1 country - 1 music album' interactive map
-                </div>
-        
-                <a href='/music-map' target="_blank" class="card__button">
-                  <i class="fa-solid fa-up-right-from-square mr-5"></i>
-                  Check it out
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- MyTvList -->
-          <div class="card">
-            <div class="card__inner my-tv-list">
-              <div class="card__content">
-                <div class="card__title align-center">
-                  MyTvList
-                </div>
-          
-                <div class="card__description">
-                  Personal collection of TV shows
-                </div>
-          
-                <a href='/my-tv-list' target="_blank" class="card__button">
-                  <i class="fa-solid fa-up-right-from-square mr-5"></i>
-                  Check it out
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Useful Stuff -->
-          <div class="card">
-            <div class="card__inner useful-stuff">
-              <div class="card__content">
-                <div class="card__title align-center">
-                  Useful Stuff
-                </div>
-          
-                <div class="card__description">
-                  Collection of useful websites and software
-                </div>
-          
-                <a href='/useful-stuff' target="_blank" class="card__button">
-                  <i class="fa-solid fa-up-right-from-square mr-5"></i>
-                  Check it out
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-  </main>
-</body>
-
+      <section class="skills">
+        <h2 class="section-title">SKILLS</h2>
+        <skill-list></skill-list>
+      </section>
+    </main>
+  </body>
+  
 </html>
