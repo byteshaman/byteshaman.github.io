@@ -1,5 +1,6 @@
 *, *::before, *::after { box-sizing: border-box; }
 
+/* track the user'’'s current color-scheme on the :root element, so it’s inherited down and applied to all elements */
 :root {
   color-scheme: light dark;
 }
@@ -10,7 +11,6 @@
   --bg-l:       #f0fdf4;  --bg-d:       #052e16;
   --surface-l:  #dcfce7;  --surface-d:  #14532d;
   --text-l:     #14532d;  --text-d:     #dcfce7;
-  --accent-l:   #16a34a;  --accent-d:   #4ade80;
   --border-l:   #bbf7d0;  --border-d:   #166534;
 }
 
@@ -20,7 +20,6 @@
   --bg-l:       #fffbeb;  --bg-d:       #1c0a00;
   --surface-l:  #fef3c7;  --surface-d:  #451a03;
   --text-l:     #78350f;  --text-d:     #fef3c7;
-  --accent-l:   #d97706;  --accent-d:   #fbbf24;
   --border-l:   #fde68a;  --border-d:   #92400e;
 }
 
@@ -30,7 +29,6 @@
   --bg-l:       #fff7ed;  --bg-d:       #1c0500;
   --surface-l:  #fee2e2;  --surface-d:  #450a0a;
   --text-l:     #7f1d1d;  --text-d:     #fde8e8;
-  --accent-l:   #b45309;  --accent-d:   #f97316;
   --border-l:   #fecaca;  --border-d:   #7f1d1d;
 }
 
@@ -40,7 +38,6 @@
   --bg-l:       #f0f9ff;  --bg-d:       #020f1a;
   --surface-l:  #e0f2fe;  --surface-d:  #0c2237;
   --text-l:     #0c4a6e;  --text-d:     #e0f2fe;
-  --accent-l:   #0284c7;  --accent-d:   #38bdf8;
   --border-l:   #bae6fd;  --border-d:   #0c4a6e;
 }
 
@@ -50,9 +47,7 @@
   --bg:      light-dark(var(--bg-l),      var(--bg-d));
   --surface: light-dark(var(--surface-l), var(--surface-d));
   --text:    light-dark(var(--text-l),    var(--text-d));
-  --accent:  light-dark(var(--accent-l),  var(--accent-d));
-  --muted:   light-dark(var(--muted-l),   var(--muted-d));
-  --border:  light-dark(var(--border-l),  var(--border-d));
+  --border:  light-dark(var(--border-l),  var(--border-d)); 
 }
 
 html {

@@ -6,6 +6,5 @@ export const SKILLS = [
   'javascript',
   'lit',
   'sass',
-  'sql',
   'typescript',
 ] as const;

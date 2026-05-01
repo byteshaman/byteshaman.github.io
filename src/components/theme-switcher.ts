@@ -21,22 +21,21 @@ export class ThemeSwitcher extends LitElement {
     button {
       padding: 6px 12px;
       border-radius: 20px;
-      border: 1.5px solid transparent;
+      border: 1.5px solid var(--border);
       font-size: 13px;
       cursor: pointer;
-      background: transparent;
+      background-color: transparent;
       color: var(--text);
-      border-color: var(--border);
       transition: background-color 0.5s, 
                   color 0.5s, 
                   border-color 0.5s;
     }
     button.active {
-      background: var(--primary);
+      background-color: var(--primary);
       color: var(--bg);
     }
     button:hover:not(.active) {
-      background: var(--surface);
+      background-color: var(--surface);
     }
   `;
 

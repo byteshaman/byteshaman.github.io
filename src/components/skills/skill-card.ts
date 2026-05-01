@@ -11,11 +11,15 @@ export class SkillCard extends LitElement {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 10px; 
       
       padding: 1.5rem;
       border: 1px solid var(--border);
+      border-radius: 1rem;
       box-shadow: 0 0 1rem 0 color-mix(in srgb, var(--text) 5%, transparent);
+
+      background-color: var(--surface);
     } 
 
     .logo {
@@ -26,6 +30,8 @@ export class SkillCard extends LitElement {
       font-size: clamp(12px, 3vw, 20px);
       text-align: center;
     }
+
+
   `;
 
   render() {
