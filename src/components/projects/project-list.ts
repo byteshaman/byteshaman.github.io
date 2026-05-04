@@ -8,7 +8,8 @@ import './project-card.ts';
 export class ProjectList extends LitElement {
   static styles = css`
     :host {
-      --fluid-width: clamp(150px, 30vw, 350px);
+      /* @link https://utopia.fyi/clamp/calculator?a=320,1200,150—400 */
+      --fluid-width: clamp(150px, 59.0909px + 28.4091vw, 400px);
 
       display: grid;
       margin-inline: auto !important;

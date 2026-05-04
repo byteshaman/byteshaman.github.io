@@ -22,7 +22,6 @@ export class TypedText extends LitElement {
         typing 3s steps(45, end),
         blink-caret 1s step-end infinite;
 
-        
       @media (width < 480px) {
         letter-spacing: 0.15em;
       }

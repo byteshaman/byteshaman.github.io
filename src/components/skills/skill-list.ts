@@ -11,7 +11,8 @@ export class SkillList extends LitElement {
     :host {
       /* Variables for easy tweaking */
       --max-columns: 4;
-      --max-item-width: clamp(100px, 15vw, 150px);
+      /* @link https://utopia.fyi/clamp/calculator?a=320,1200,120—150 */
+      --max-item-width: clamp(120px, 109.0909px + 3.4091vw, 150px);
 
       display: grid;
       margin-inline: auto !important;
