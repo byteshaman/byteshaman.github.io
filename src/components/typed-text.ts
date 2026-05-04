@@ -3,18 +3,14 @@ import { customElement, property } from 'lit/decorators.js';
 
 @customElement('typed-text')
 export class TypedText extends LitElement {
-  // Reactive property
-  @property() text = '';
+  @property() text!: string; // Input property
 
   static styles = css`
-    :host {
-      display: block;
-    }
-
-    .typewriter {  
+    h1 {  
+      font-size: var(--fs-1);
       overflow: hidden;
       white-space: nowrap;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.05rem;
 
       /* blinking cursor implemented as a right border */
       border-right: 2px solid var(--text-color, currentColor);
@@ -25,14 +21,9 @@ export class TypedText extends LitElement {
       animation:
         typing 3s steps(45, end),
         blink-caret 1s step-end infinite;
-    }
 
-    /*
-     * Wider letter-spacing on larger screens.
-     * Replicates the original @include from-breakpoint-up(mobile) mixin.
-     */
-    @media (min-width: 480px) {
-      .typewriter {
+        
+      @media (width < 480px) {
         letter-spacing: 0.15em;
       }
     }
@@ -51,6 +42,6 @@ export class TypedText extends LitElement {
   `;
 
   render() {
-    return html`<h1 class="typewriter">${this.text}</h1>`;
+    return html`<h1>${this.text}</h1>`;
   }
 }

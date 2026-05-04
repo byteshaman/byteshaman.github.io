@@ -1,16 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- META -->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name=description content="Personal website that also serves as a project showcase">
     <title>ByteShaman</title>
 
+    <!-- CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" >
     <link rel="stylesheet" href="./src/global.css" />
 
+    <!-- JS -->
     <script type="module" src="/src/main.ts"></script>
     <script>
       const season = localStorage.getItem('theme-season');
@@ -25,8 +29,7 @@
     <header>
       <nav>
         <a href="http://github.com/byteshaman" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i>
-          <span>Github</span>
+          <img src="./src/assets/logos/github-logo.svg" alt="github logo" width="24" height="24" />
         </a>
       </nav>
       <theme-switcher></theme-switcher>
@@ -36,7 +39,7 @@
       <!-- SECTION 1: Profile -->
       <section class="profile">
         <div>
-          <typed-text text="Hello, world! 👋"></typed-text>
+          <typed-text text="Hello, world! 👋🏻"></typed-text>
 
           <p>Web Developer from Italy, passionate about IT since I was 1010<sub>2</sub></p>
       
@@ -44,16 +47,19 @@
       
           <p>Between bug fixes, I dive into music, films, and legendary gaming quests!</p>
         </div>
-      
-        <div class="pfp-wrap">
-          <img src="./src/assets/placeholder.svg" alt="Profile picture" class="placeholder" width="100"/>
-          <img src="./src/assets/profile-pic.webp" alt="pfp" aria-hidden="true" loading="lazy" class="pfp"  width="100"/>
-        </div>
+        <profile-picture></profile-picture>
       </section>
 
+      <!-- SECTION 2: Skills -->
       <section class="skills">
-        <h2 class="section-title">SKILLS</h2>
+        <h1>SKILLS</h1>
         <skill-list></skill-list>
+      </section>
+
+      <!-- SECTION 3: Projects -->
+      <section class="projects">
+        <h1>PROJECTS</h1>
+        <project-list></project-list>
       </section>
     </main>
   </body>

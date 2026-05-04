@@ -1,8 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { SKILLS } from './../../data/skills.data';
+import { SKILLS } from '../../data/skills.data.js';
 import './skill-card.js';
-
 
 
 @customElement('skill-list')
@@ -10,26 +9,28 @@ export class SkillList extends LitElement {
   static styles = css`
     /** refers to the shadow root of the component */
     :host {
+      /* Variables for easy tweaking */
       --max-columns: 4;
-      --item-width: 150px;
-      --layout-gap: 15px;
+      --max-item-width: clamp(100px, 15vw, 150px);
 
       display: grid;
-      gap: var(--layout-gap);
+      margin-inline: auto !important;
+      
       /* Force fixed width */
-      grid-template-columns: repeat(auto-fit, var(--item-width));
+      grid-template-columns: repeat(auto-fit, minmax(var(--max-item-width), var(--max-item-width)));
+      gap: var(--fluid-gap);
       
       /* The math that caps the maximum amount of columns */
       --gap-count: calc(var(--max-columns) - 1); /* N of elems - 1 */
-      --total-gap-width: calc(var(--gap-count) * var(--layout-gap));
-      max-width: calc((var(--item-width) * var(--max-columns)) + var(--total-gap-width));
+      --total-gap-width: calc(var(--gap-count) * var(--fluid-gap));
+      max-width: calc((var(--max-item-width) * var(--max-columns)) + var(--total-gap-width));
 
       /* Alignment */
-      margin-inline: auto; /* Better margin syntax: this only refers to X-axis */
+      margin-inline: auto; /* Needed because */
       justify-content: center; /* Centers items inside the grid when they wrap */
     }
 
-    /* simple effects for each skill */
+    /*# region simple effects for each skill */
   
     .angular:hover { /* zoom */
       transform: scale(1.05);
@@ -75,6 +76,7 @@ export class SkillList extends LitElement {
         transform: translateX(-3px) rotate(-2deg);
       }
     }
+    /*# endregion effects */
   `;
   
   render() {

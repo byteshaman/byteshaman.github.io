@@ -7,7 +7,7 @@
 
 /* ─── SPRING ─────────────────────────────── */
 [data-theme="spring"] {
-  --primary-l:  #4ade80;  --primary-d:  #86efac;
+  --primary-l:  #4ade80;  --primary-d:  #4ade80;
   --bg-l:       #f0fdf4;  --bg-d:       #052e16;
   --surface-l:  #dcfce7;  --surface-d:  #14532d;
   --text-l:     #14532d;  --text-d:     #dcfce7;
@@ -16,7 +16,7 @@
 
 /* ─── SUMMER ────────────────────────────────── */
 [data-theme="summer"] {
-  --primary-l:  #f59e0b;  --primary-d:  #fcd34d;
+  --primary-l:  #fcd34d;  --primary-d:  #fcd34d;
   --bg-l:       #fffbeb;  --bg-d:       #1c0a00;
   --surface-l:  #fef3c7;  --surface-d:  #451a03;
   --text-l:     #78350f;  --text-d:     #fef3c7;
@@ -25,7 +25,7 @@
 
 /* ─── AUTUMN ───────────────────────────────── */
 [data-theme="autumn"] {
-  --primary-l:  #dc2626;  --primary-d:  #f87171;
+  --primary-l:  #f87171;  --primary-d:  #f87171;
   --bg-l:       #fff7ed;  --bg-d:       #1c0500;
   --surface-l:  #fee2e2;  --surface-d:  #450a0a;
   --text-l:     #7f1d1d;  --text-d:     #fde8e8;
@@ -34,25 +34,57 @@
 
 /* ─── WINTER ───────────────────────────────── */
 [data-theme="winter"] {
-  --primary-l:  #38bdf8;  --primary-d:  #7dd3fc;
+  --primary-l:  #7dd3fc;  --primary-d:  #7dd3fc;
   --bg-l:       #f0f9ff;  --bg-d:       #020f1a;
-  --surface-l:  #e0f2fe;  --surface-d:  #0c2237;
+  --surface-l:  #e0f2fe;  --surface-d:  #0c2237; 
   --text-l:     #0c4a6e;  --text-d:     #e0f2fe;
   --border-l:   #bae6fd;  --border-d:   #0c4a6e;
 }
 
 /* light-dark() will automatically pick the correct color  */
 :root {
-  --primary: light-dark(var(--primary-l), var(--primary-d));
-  --bg:      light-dark(var(--bg-l),      var(--bg-d));
-  --surface: light-dark(var(--surface-l), var(--surface-d));
-  --text:    light-dark(var(--text-l),    var(--text-d));
-  --border:  light-dark(var(--border-l),  var(--border-d)); 
+  --primary:  light-dark(var(--primary-l), var(--primary-d));
+  --bg:       light-dark(var(--bg-l),      var(--bg-d));
+  --surface:  light-dark(var(--surface-l), var(--surface-d));
+  --text:     light-dark(var(--text-l),    var(--text-d));
+  --border:   light-dark(var(--border-l),  var(--border-d)); 
+  --lightest: light-dark(var(--bg-l),      var(--text-d)); /* utility */
+  --darkest:  light-dark(var(--text-l),    var(--bg-d)); /* utility */
+}
+
+/* typography (generated with utopia.fyi) */
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1200,20,1.2,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+  --fs--1: clamp(0.8889rem, 0.8333rem + 0.2778vw, 1.0417rem);
+  --fs-0: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
+  --fs-1: clamp(1.125rem, 0.9886rem + 0.6818vw, 1.5rem);
+  --fs-2: clamp(1.2656rem, 1.0713rem + 0.9716vw, 1.8rem);
+
+  --fluid-gap: clamp(4px, 1vw, 12px);
+}
+
+small {
+  font-size: var(--fs--1);
+}
+
+::selection {
+  background: light-dark(var(--darkest), var(--lightest));  
+  color: light-dark(var(--lightest), var(--darkest));
+}
+
+/*? reset css */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+*:not(dialog) {
+  margin-inline: 0;
+  margin-block: 0;
+  padding-inline: 0;
+  padding-block: 0;
 }
 
 html {
-  background: var(--bg);
-  color: var(--text);
+  font-size: var(--fs-0);
 }
 
 header {
@@ -66,43 +98,37 @@ header {
 }
 
 body {
-  transition: background 0.3s, color 0.3s;
+  background: var(--bg);
+  color: var(--text);
+
   margin: 0;
-  min-width: 320px;
-  min-height: 100svh;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-inline-size: 320px;
+  min-block-size: 100svh;
+  transition: background 0.3s, color 0.3s;
   overflow-x: hidden;
 
-  
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
   max-width: 1200px;
-  margin: 0 auto;
+  margin-inline: auto;
   padding: 0 1rem;
 }
 
-.section-title {
-  letter-spacing: 0.5em;
-  text-align: center;
-  font-size: clamp(3.5rem, 5vw, 60px);
-  margin: 1.5rem 0;
-  margin-inline-end: -0.5em; /* hacky way to cancel the letter-spacing on the last letter */
-}
-
-/* REGION - PROFILE */
 section.profile {
   display: flex;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
 
   @media (width <= 900px) {
     flex-direction: column-reverse;
@@ -110,36 +136,11 @@ section.profile {
   }
 }
 
-
-.pfp-wrap {
-  /* position: relative;  */
-  width: clamp(200px, 20vw, 400px);
-  /* aspect-ratio: 1 / 1; */
-
-  display: grid;
-
-  img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    grid-area: 1 / 1; /* occupy same cell */
-    transition: opacity .69s ease;
-
-    &.pfp {
-      opacity: 0;
-    }
-  }
-
-  &:hover {
-    .pfp {
-      opacity: 1;
-    }
-    .placeholder {
-      opacity: 0;
-    }
-  }
+/* won't target typewrited text thx to shadow dom */
+section h1 {
+  letter-spacing: 0.5rem;
+  text-align: center;
+  font-size: var(--fs-2);
+  margin: 1.5rem 0;
+  margin-inline-end: -0.5rem; /* hacky way to cancel the letter-spacing on the last letter */
 }
-
-
-/* REGION - SKILLS */
