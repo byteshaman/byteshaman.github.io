@@ -36,8 +36,10 @@ export class SkillCard extends LitElement {
 
   render() {
     const logoName = `${this.skill}-logo`;
+    const logoUrl = new URL(`../../assets/logos/${logoName}.svg`, import.meta.url).href;
+    
     return html`
-      <img src="src/assets/logos/${logoName}.svg" alt=${logoName} width="50" height="50" class="skill-icon" />
+      <img src="${logoUrl}" alt=${logoName} width="50" height="50" class="skill-icon" />
       <span>${this.skill.toUpperCase()}</span>
     `;
   }

@@ -4,6 +4,7 @@ export function applyTheme(season: Season, mode: Mode): void {
   const html = document.documentElement;
   html.setAttribute('data-theme', season);
   html.style.colorScheme = mode; // light-dark() will react to this
+  console.log('inside applyTheme, season', season, 'mode', mode)
   localStorage.setItem('theme-season', season);
   localStorage.setItem('theme-mode', mode);
 }
@@ -27,7 +28,7 @@ export function initTheme(): { season: Season; mode: Mode } {
   const savedSeason = localStorage.getItem('theme-season') as Season | null;
   const savedMode = localStorage.getItem('theme-mode') as Mode | null;
 
-  const season = savedSeason ?? getSeasonByDate();
+  const season = savedSeason ?? 'spring';
   const mode = savedMode ?? getSystemMode();
 
   applyTheme(season, mode);
