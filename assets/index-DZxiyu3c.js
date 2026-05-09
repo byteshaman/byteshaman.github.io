@@ -105,7 +105,7 @@
         <p class="card-title">${this.project.title}</p>
         <div class="card-content">
           <small>${this.project.desc}</small>
-          <a href="https://byteshaman.github.io/${this.project.id}" target="_blank">Check it out &rsaquo;</a>
+          <a href="https://byteshaman.github.io/${this.project.id}" target="_blank" aria-label="Visit ${this.project.id} project page">Check it out &rsaquo;</a>
         </div>
       </div>
     `}};J([q({type:Object})],Y.prototype,`project`,void 0),Y=J([K(`project-card`)],Y);var je=class extends G{static{this.styles=o`
