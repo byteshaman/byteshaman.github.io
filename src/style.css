@@ -140,7 +140,7 @@ section.profile {
   }
 }
 
-/* won't target typewrited text thx to shadow dom */
+/* won't target typewrited text because of shadow dom */
 section h1 {
   letter-spacing: 0.5rem;
   text-align: center;

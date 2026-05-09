@@ -24,7 +24,7 @@ export class SkillCard extends LitElement {
     } 
 
     .skill-icon {
-      /* 50px → 70px @link https://utopia.fyi/clamp/calculator?a=320,1200,50—70 */
+      /* @link https://utopia.fyi/clamp/calculator?a=320,1200,50—70 */
       width: clamp(50px, 42.7273px + 2.2727vw, 70px);
       height: auto;
     }

@@ -9,7 +9,8 @@ export class ProfilePicture extends LitElement {
   static styles = css`
     /** refers to the shadow root of the component */
     :host { 
-      width: clamp(250px, 35vw, 400px);
+      /* @link https://utopia.fyi/clamp/calculator?a=320,1200,250—400 */
+      width: clamp(250px, 195.4545px + 17.0455vw, 400px);
       display: grid;
       grid-template-areas: "stack";
 
@@ -17,7 +18,7 @@ export class ProfilePicture extends LitElement {
         display: block;
         width: 100%;
         height: auto; /* needed because of the specified height in the html tag */
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 1;
         object-fit: cover;
         grid-area: stack; /* occupy same cell */
         transition: opacity 1.5s ease;
