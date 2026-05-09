@@ -84,7 +84,7 @@ export class ProjectCard extends LitElement {
     const imgUrl = new URL(`../../assets/projects/${this.project.id}.webp`, import.meta.url).href;
 
     return html`
-      <img src="${imgUrl}" alt="project pic" width="150" height="150"/>
+      <img src="${imgUrl}" alt="project pic" width="150" height="150" loading="lazy"/>
 
       <div class="overlay-container">
         <p class="card-title">${this.project.title}</p>
