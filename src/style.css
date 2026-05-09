@@ -1,5 +1,12 @@
 *, *::before, *::after { box-sizing: border-box; }
 
+*:not(dialog) {
+  margin-inline: 0;
+  margin-block: 0;
+  padding-inline: 0;
+  padding-block: 0;
+}
+
 /* track the user'’'s current color-scheme on the :root element, so it’s inherited down and applied to all elements */
 :root {
   color-scheme: light dark;
@@ -52,7 +59,15 @@
   --darkest:  light-dark(var(--text-l),    var(--bg-d)); /* utility */
 }
 
-/* typography (generated with utopia.fyi) */
+/* typography */
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url('/public/pixelify-sans-variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.067,1200,20,1.414,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
@@ -78,17 +93,6 @@ small {
   color: light-dark(var(--lightest), var(--darkest));
 }
 
-/*? reset css */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-*:not(dialog) {
-  margin-inline: 0;
-  margin-block: 0;
-  padding-inline: 0;
-  padding-block: 0;
-}
-
 html {
   font-size: var(--fs-0);
 }
@@ -100,6 +104,10 @@ header {
   padding: 1rem;
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
+}
+
+nav svg { /* Alternatively: svg loaded from location, and styled with filter */
+  color: light-dark(var(--darkest), var(--lightest));  
 }
 
 body {

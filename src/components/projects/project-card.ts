@@ -90,9 +90,9 @@ export class ProjectCard extends LitElement {
         <p class="card-title">${this.project.title}</p>
         <div class="card-content">
           <small>${this.project.desc}</small>
-          <a href="${imgUrl}" target="_blank">Check it out &rsaquo;</a>
+          <a href="https://byteshaman.github.io/${this.project.id}" target="_blank">Check it out &rsaquo;</a>
         </div>
       </div>
     `;
   }
-}
+} 

@@ -4,7 +4,6 @@ export function applyTheme(season: Season, mode: Mode): void {
   const html = document.documentElement;
   html.setAttribute('data-theme', season);
   html.style.colorScheme = mode; // light-dark() will react to this
-  console.log('inside applyTheme, season', season, 'mode', mode)
   localStorage.setItem('theme-season', season);
   localStorage.setItem('theme-mode', mode);
 }
