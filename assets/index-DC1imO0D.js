@@ -99,7 +99,7 @@
       }
     }
   `}render(){return P`
-      <img src="${new URL(Object.assign({"../../assets/projects/favorite-albums-showcase.webp":De,"../../assets/projects/music-map.webp":Oe,"../../assets/projects/my-tv-list.webp":ke,"../../assets/projects/useful-stuff.webp":Ae})[`../../assets/projects/${this.project.id}.webp`],import.meta.url).href}" alt="project pic" width="150" height="150"/>
+      <img src="${new URL(Object.assign({"../../assets/projects/favorite-albums-showcase.webp":De,"../../assets/projects/music-map.webp":Oe,"../../assets/projects/my-tv-list.webp":ke,"../../assets/projects/useful-stuff.webp":Ae})[`../../assets/projects/${this.project.id}.webp`],import.meta.url).href}" alt="project pic" width="150" height="150" loading="lazy"/>
 
       <div class="overlay-container">
         <p class="card-title">${this.project.title}</p>
@@ -153,7 +153,7 @@
       text-align: center;
     }
   `}render(){let e=`${this.skill}-logo`;return P`
-      <img src="${new URL(Object.assign({"../../assets/logos/angular-logo.svg":Ne,"../../assets/logos/css-logo.svg":Pe,"../../assets/logos/git-logo.svg":Fe,"../../assets/logos/github-logo.svg":Ie,"../../assets/logos/html-logo.svg":Le,"../../assets/logos/javascript-logo.svg":Re,"../../assets/logos/lit-logo.svg":ze,"../../assets/logos/sass-logo.svg":Be,"../../assets/logos/typescript-logo.svg":Ve})[`../../assets/logos/${e}.svg`],import.meta.url).href}" alt=${e} width="50" height="50" class="skill-icon" />
+      <img src="${new URL(Object.assign({"../../assets/logos/angular-logo.svg":Ne,"../../assets/logos/css-logo.svg":Pe,"../../assets/logos/git-logo.svg":Fe,"../../assets/logos/github-logo.svg":Ie,"../../assets/logos/html-logo.svg":Le,"../../assets/logos/javascript-logo.svg":Re,"../../assets/logos/lit-logo.svg":ze,"../../assets/logos/sass-logo.svg":Be,"../../assets/logos/typescript-logo.svg":Ve})[`../../assets/logos/${e}.svg`],import.meta.url).href}" alt=${e} width="50" height="50" class="skill-icon" loading="lazy" />
       <span>${this.skill.toUpperCase()}</span>
     `}};J([q()],X.prototype,`skill`,void 0),X=J([K(`skill-card`)],X);var He=class extends G{static{this.styles=o`
     /** refers to the shadow root of the component */
