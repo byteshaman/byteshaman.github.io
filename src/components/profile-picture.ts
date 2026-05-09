@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { assets } from '../utils/assets';
+import placeholder from '../assets/placeholder.svg';
+import profilePic from '../assets/profile-pic.webp';
 
 @customElement('profile-picture')
 export class ProfilePicture extends LitElement {
@@ -31,15 +32,10 @@ export class ProfilePicture extends LitElement {
     }
   `;
 
-  render() {
-    const placeholder = assets['../assets/placeholder.svg'];
-    const profilePic = assets['../assets/profile-pic.webp'];
-    
+  render() {    
     return html`
       <img src="${placeholder}" alt="pfp placeholder" class="placeholder" width="100" height="100" fetchpriority="high"/>
       <img src="${profilePic}" alt="pfp" loading="lazy" class="pfp"  width="100" height="100"/>
     `;
   }
-
-
 }
