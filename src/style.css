@@ -64,8 +64,9 @@
   --fs-1: clamp(1.067rem, 0.8123rem + 1.2736vw, 1.7675rem);
   /* Step 2: 18.2158px → 39.9879px */
   --fs-2: clamp(1.1385rem, 0.6437rem + 2.4741vw, 2.4992rem);
-  /* Gap 4px → 12px https://utopia.fyi/space/calculator/?c=320,4,1.067,1200,12,1.414 */
-  --fluid-gap: clamp(0.25rem, 0.0682rem + 0.9091vw, 0.75rem);
+  /* Gaps https://utopia.fyi/space/calculator/?c=320,4,1.067,1200,12,1.414 */
+  --fluid-gap-0: clamp(0.25rem, 0.0682rem + 0.9091vw, 0.75rem);
+  --fluid-gap-1: clamp(0.5rem, 0.1364rem + 1.8182vw, 1.5rem);
 }
 
 small {

@@ -17,7 +17,7 @@ export class ProjectList extends LitElement {
       grid-template-columns: repeat(2, var(--fluid-width));
 
       justify-content: center;
-      gap: var(--fluid-gap);
+      gap: var(--fluid-gap-0);
     }
   `;
   

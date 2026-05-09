@@ -19,11 +19,11 @@ export class SkillList extends LitElement {
       
       /* Force fixed width */
       grid-template-columns: repeat(auto-fit, minmax(var(--max-item-width), var(--max-item-width)));
-      gap: var(--fluid-gap);
+      gap: var(--fluid-gap-1);
       
       /* The math that caps the maximum amount of columns */
       --gap-count: calc(var(--max-columns) - 1); /* N of elems - 1 */
-      --total-gap-width: calc(var(--gap-count) * var(--fluid-gap));
+      --total-gap-width: calc(var(--gap-count) * var(--fluid-gap-1));
       max-width: calc((var(--max-item-width) * var(--max-columns)) + var(--total-gap-width));
 
       /* Alignment */
