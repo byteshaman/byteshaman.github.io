@@ -25,7 +25,7 @@
     }
   `}render(){return N`
       <img src="${Te[`../assets/placeholder.svg`]}" alt="pfp placeholder" class="placeholder" width="100" height="100" fetchpriority="high"/>
-      <img src="${Te[`../assets/profile-pic.webp`]}" alt="pfp" loading="lazy" class="pfp"  width="100" height="100"/>
+      <img src="${Te[`../assets/profile-pic.webp`]}" alt="pfp" fetchpriority="low" class="pfp"  width="100" height="100"/>
     `}};Ee=J([G(`profile-picture`)],Ee);var De=[{id:`music-map`,desc:"`1 country - 1 music album` interactive map",title:`Music Map`},{id:`useful-stuff`,desc:`A collection of useful sites and software`,title:`Useful Stuff`},{id:`my-tv-list`,desc:`Personal TV show tracker`,title:`MyTVList`},{id:`favorite-albums`,desc:`Favorite music albums showcase`,title:`Favorite Albums`}],Oe=`/assets/favorite-albums-DYZfIXyZ.webp`,ke=`/assets/music-map-DcwfFvlQ.webp`,Ae=`/assets/my-tv-list-DcgO8jAA.webp`,je=`/assets/useful-stuff-C72BLTHR.webp`,Y=class extends W{static{this.styles=o`
     /** refers to the shadow root of the component */
     :host {
