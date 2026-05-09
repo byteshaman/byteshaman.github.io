@@ -27,7 +27,7 @@
   `}render(){return P`
       <img src="${Ce}" alt="pfp placeholder" class="placeholder" width="100" height="100" fetchpriority="high"/>
       <img src="${we}" alt="pfp" loading="lazy" class="pfp"  width="100" height="100"/>
-    `}};Te=J([K(`profile-picture`)],Te);var Ee=[{id:`music-map`,desc:"`1 country - 1 music album` interactive map",title:`Music Map`},{id:`useful-stuff`,desc:`A collection of useful sites and software`,title:`Useful Stuff`},{id:`my-tv-list`,desc:`Personal TV show tracker`,title:`MyTVList`},{id:`favorite-albums`,desc:`Favorite music albums showcase`,title:`Favorite Albums`}],De=`/assets/favorite-albums-DYZfIXyZ.webp`,Oe=`/assets/music-map-DcwfFvlQ.webp`,ke=`/assets/my-tv-list-DcgO8jAA.webp`,Ae=`/assets/useful-stuff-C72BLTHR.webp`,Y=class extends G{static{this.styles=o`
+    `}};Te=J([K(`profile-picture`)],Te);var Ee=[{id:`music-map`,desc:"`1 country - 1 music album` interactive map",title:`Music Map`},{id:`useful-stuff`,desc:`A collection of useful sites and software`,title:`Useful Stuff`},{id:`my-tv-list`,desc:`Personal TV show tracker`,title:`MyTVList`},{id:`favorite-albums-showcase`,desc:`Favorite music albums showcase`,title:`Favorite Albums`}],De=`/assets/favorite-albums-showcase-DYZfIXyZ.webp`,Oe=`/assets/music-map-DcwfFvlQ.webp`,ke=`/assets/my-tv-list-DcgO8jAA.webp`,Ae=`/assets/useful-stuff-C72BLTHR.webp`,Y=class extends G{static{this.styles=o`
     /** refers to the shadow root of the component */
     :host {
       display: grid;
@@ -99,7 +99,7 @@
       }
     }
   `}render(){return P`
-      <img src="${new URL(Object.assign({"../../assets/projects/favorite-albums.webp":De,"../../assets/projects/music-map.webp":Oe,"../../assets/projects/my-tv-list.webp":ke,"../../assets/projects/useful-stuff.webp":Ae})[`../../assets/projects/${this.project.id}.webp`],import.meta.url).href}" alt="project pic" width="150" height="150"/>
+      <img src="${new URL(Object.assign({"../../assets/projects/favorite-albums-showcase.webp":De,"../../assets/projects/music-map.webp":Oe,"../../assets/projects/my-tv-list.webp":ke,"../../assets/projects/useful-stuff.webp":Ae})[`../../assets/projects/${this.project.id}.webp`],import.meta.url).href}" alt="project pic" width="150" height="150"/>
 
       <div class="overlay-container">
         <p class="card-title">${this.project.title}</p>
