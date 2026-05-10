@@ -61,11 +61,16 @@
 
 /* typography */
 @font-face {
-  font-family: 'Pixelify Sans';
-  src: url('/public/pixelify-sans-variable.woff2') format('woff2');
+  font-family: 'LucasArts';
+  /* src: url('/fonts/pixelify-sans-regular.woff2') format('woff2'); */
+  /* @link https://fontstruct.com/fontstructors/140159/goatmeal?q=scumm */
+  src: url('/fonts/lucasarts-scumm-subtitle-roman.woff2') format('woff2');
+  /* @llink https://fontesk.com/redaction-typeface/ */
+  /* src: url('/fonts/redaction-50-regular.woff2') format('woff2'); */
+  /* @link https://www.ptless.org/sfomi/ */
+  /* src: url('/fonts/lucasarts-sfomi-1990-refined.woff2') format('woff2'); */
   font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
+  font-weight: bold;
 }
 
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.067,1200,20,1.414,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -119,7 +124,7 @@ body {
   transition: background 0.3s, color 0.3s;
   overflow-x: hidden;
 
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "LucasArts", monospace;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
